@@ -1,0 +1,1 @@
+import{h as t}from"./request-ZaKeb_ww.js";const m=()=>t.get("/getComments"),n=e=>t.post("/getComment",e),s=e=>(console.log(e),console.log(e._id),t.patch(`/getComment/${e._id}`,e)),r=e=>t.delete(`/getComment/${e}`);export{n as a,r as d,m as g,s as u};
