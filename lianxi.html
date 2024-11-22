@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>方块动画示例</title>
+   
+   <style>
+.block {
+ width: 50px;
+ height: 50px;
+ background: linear-gradient(blue, pink);
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ transform: rotate(45deg);
+ margin: 100px;
+}
+.carousel {
+ position: relative;
+ width: 100%;
+ overflow: hidden;
+ width: 100px;
+ height: 100px;
+
+}
+
+.carousel img {
+ position: absolute;
+
+ width: 100%;
+ height: 100%;
+
+ object-fit: cover;
+ transition: all 0.5s ease-in-out;
+}
+   </style>
+</head>
+<body>
+    
+ <div class="carousel">
+    <img src="./images/1.jpg" alt="图片1">
+    <img src="./images/2.jpg" alt="图片2">
+    <img src="./images/3.jpg" alt="图片3">
+    <img src="./images/4.jpg" alt="图片4">
+  </div>
+  <button onclick="showImage(1)">放大图片1</button>
+<button onclick="showImage(2)">放大图片2</button>
+<button onclick="showImage(3)">放大图片3</button>
+<button onclick="showImage(4)">放大图片4</button>
+   <div class="block"></div>
+   
+   <script src="scripts.js"></script>
+</body>
+</html>
+
+<script>
+
+const carousel = document.querySelector('.carousel');
+const images = carousel.querySelectorAll('img');
+let currentIndex = 0;
+
+function showImage(index) {
+ images.forEach((img, i) => {
+   if (i === index) {
+     img.style.transform = 'scale(1)';
+   } else {
+     img.style.transform = 'scale(0.5)';
+   }
+ });
+}
+
+showImage(currentIndex);
+
+
+
+
+    const block = document.querySelector('.block');
+let angle = 0;
+
+function animate() {
+ angle += 1;
+ block.style.transform = `rotate(${angle}deg)`;
+ requestAnimationFrame(animate);
+}
+
+// animate();
+function randomColor() {
+ const letters = '0123456789ABCDEF';
+ let color = '#';
+ for (let i = 0; i < 6; i++) {
+   color += letters[Math.floor(Math.random() * 16)];
+ }
+ return color;
+}
+
+
+function changeColor() {
+ block.style.background = `linear-gradient( ${randomColor()},  ${randomColor()})`;
+}
+
+setInterval(changeColor, 1000); // 每秒钟更新一次颜色
+</script>

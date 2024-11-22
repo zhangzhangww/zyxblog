@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.shell{
+				display: flex;
+				justify-content: center;
+				overflow: hidden;
+			}
+			.png{
+				width: 2400px;.
+				margin:auto;
+			}
+			.png>img{
+				width: 2400px;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="shell">
+			<div class="png">
+				<img src="./images/bg.png" alt="" />
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		const shell = document.querySelector(".shell")
+		const png = document.querySelector(".png")
+		shell.addEventListener('mouseenter',function(e){
+			this.x=e.clientX
+			png.style.transition='none'
+		})
+		shell.addEventListener('mousemove',function(e){
+			this._x=e.clientX
+			const disx=this._x - this.x
+			const move = 0 - disx/-20
+			png.style.transform=`translate(${move}px,0px)`
+		})
+		shell.addEventListener('mouseleave',function(e){
+			png.style.transition=.3 + 's'
+			png.style.transform=`translate(0px,0px)`
+		})
+		
+	</script>
+</html>

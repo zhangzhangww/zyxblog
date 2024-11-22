@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+	 <a href="./index.html" style="color: white;text-decoration: none;margin-top: 20px;margin-left: 20px;">返回</a>
+    <!-- 首屏大背景 -->
+    <div class="back-image" ref="birds">
+        <client-only>
+            <div class="text-box" v-if="getPlatform() === 'Mobile'">
+                <div class="text">断剑重铸之日，骑士归来之时</div>
+            </div>
+        </client-only>
+    </div>
+    <div class="container">
+        <section class="brand">
+            <div class="wave-1"></div>
+            <div class="wave-2"></div>
+            <div class="arrow"><span class="yyp yy-arrow-down"></span></div>
+        </section>
+    </div>
+
+</body>
+
+</html>

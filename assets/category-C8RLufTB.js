@@ -1,1 +1,0 @@
-import{h as t}from"./request-ZaKeb_ww.js";const r=()=>t.get("/getCategory"),g=e=>t.post("/getCategory",e),s=e=>(console.log(e),console.log(e._id),t.patch(`/getCategory/${e._id}`,e)),a=e=>t.delete(`/getCategory/${e}`);export{g as a,a as d,r as g,s as u};

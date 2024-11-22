@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+			            margin: 0;
+			            padding: 0;
+			            box-sizing:border-box;
+			            cursor: none;           
+			        }
+					.mouse{
+					        width: 50px;
+					        height: 50px;
+					        border-radius: 50%;;
+					        position: fixed;
+					        left: -200px;
+					        z-index: 1000;
+					        pointer-events: none;
+					    }
+					
+		</style>
+	</head>
+	<body>
+		<div>asffffffffffffffffffasdfasd</div>
+		<img class="mouse" src="./images/0.jpg" alt="">
+	</body>
+	<script>
+		 var mouse = document.querySelector('.mouse');
+		        window.addEventListener('mousemove',function(event){    
+		            mouse.style.left = event.clientX - mouse.offsetWidth/2 + 'px' ;
+		            mouse.style.top = event.clientY -mouse.offsetHeight/2 + 'px';       
+		        })
+		
+	</script>
+</html>
